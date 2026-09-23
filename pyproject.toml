@@ -14,7 +14,7 @@ dependencies = ["numpy>=1.26", "scipy>=1.11"]
 dev = ["pytest>=8"]
 
 [project.urls]
-Repository = "https://github.com/wang-soonandsoon/SHARED-ONSE"
+Repository = "https://github.com/wang-soonandsoon/SHARED-ONSET"
 
 [tool.setuptools.packages.find]
 where = ["src"]
