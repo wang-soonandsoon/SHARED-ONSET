@@ -1,0 +1,17 @@
+# Same frozen target, one CPU thread and physical RSS budget for every solver.
+# No training, test-set access or quality-based request selection.
+version: 2
+seed: 20260924
+backends: [paired, template, ve, ve_aligned, ve_minfill, product_chain]
+cpu: 2
+operation_seconds: 8
+rss_limit_mib: 512
+warm_samples: 3
+clamp_workload: singletons_then_joint_v1
+query_setup: fresh_engine_primed_only_with_unclamped_partition
+budget:
+  # A float64 array larger than the entire physical budget is never admissible.
+  max_factor_entries: 67108864
+  max_workspace_bytes: 536870912
+  # Enumeration is governed by time/workspace, not the old 1M-template cap.
+  max_oracle_assignments: 9223372036854775807

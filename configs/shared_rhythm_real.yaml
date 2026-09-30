@@ -1,0 +1,18 @@
+# Inputs only. Solver budgets, backend order and the 32 draws belong to the
+# separate extension runner config. No extra training or model warmup calls.
+version: 1
+revision_root: runs/revision
+output: runs/shared_rhythm_extension/real_inputs
+requests:
+  context_cells: 256
+  L: 16
+  K: 4
+  beta: 0.02
+  quotas: {"3": 8, "4": 8, "6": 4, "8": 4}
+  partial_prefix_cells: 4
+  min_visible_onsets: 8
+  max_per_work: 2
+  minimum_distinct_works: 8
+  seed: 20260941
+  pitch_low: 48
+  pitch_high: 84

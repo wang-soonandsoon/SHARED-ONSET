@@ -1,0 +1,36 @@
+# Fixed before test evaluation. CPU requires an explicit alternate config.
+version: 1
+device: cuda:0
+seeds: [20260912, 20260913, 20260914]
+data:
+  directory: data/processed/paper2_tri/research_8beats
+  seed: 20260912
+  max_files: 909
+  window_beats: 8
+  max_windows_per_file: 100000
+models:
+  small_chord: {hidden: 64, layers: 2, heads: 4, dropout: 0.1, condition_dim: 38}
+  main_chord: {hidden: 128, layers: 4, heads: 4, dropout: 0.1, condition_dim: 38}
+  main_no_chord: {hidden: 128, layers: 4, heads: 4, dropout: 0.1, condition_dim: 0}
+training:
+  steps: 3000
+  batch_size: 32
+  lr: 0.0003
+  eval_every: 100
+  save_every: 100
+  max_gap_cells: 8
+evaluation:
+  splits: [validation, test]
+  suites: [unknown4, unknown8, partial8, known8, harmony8]
+  methods: [raw_reference, local_constraints, single_template, pooled_template, one_shot_joint, tri_direct, tri_guided, path_is_4, smc_4, rejection_16, candidate_16]
+  repeats: 2
+  per_work: 2
+  steps: 8
+  backend: auto
+  max_factor_entries: 2000000
+  max_workspace_mib: 512
+benchmarks:
+  trials: 128
+listening:
+  limit: 12
+  methods: [one_shot_joint, tri_direct, smc_4]

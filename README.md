@@ -1,23 +1,16 @@
 # SHARED-ONSET
 
-Core implementation for **Exact Joint Sampling for Shared-Onset Music Infilling**.
-
-**Full code coming soon.**
-
-This preview includes the onset-reset joint sampler, a synthetic example, and
-correctness tests. It supports the base target with zero internal motion cost;
-the full motion-weighted sampler and experimental pipeline will follow.
-
-## Quick start
-
-Requires Python 3.11+. No GPU, dataset, or checkpoint is needed.
+Full implementation of **Exact Joint Sampling for Shared-Onset Music Infilling**: onset-time decomposition, exact residual rejection, standard baselines, model training, and paper experiments.
 
 ```bash
-git clone https://github.com/wang-soonandsoon/SHARED-ONSET.git
-cd SHARED-ONSET
-python -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e '.[dev]'
-python examples/minimal.py
-python -m pytest -q
+pip install -e '.[dev,research]'
+python examples/complete.py
+python scripts/reproduce.py smoke
+pytest -q
 ```
+
+Pretrained weights, frozen experiment inputs, and all 920 recorded experiment rows are included. Raw POP909 data is obtained separately from its original repositories.
+
+[Reproduce the paper](docs/REPRODUCING.md) · [Method and API](docs/METHOD.md) · [Data sources](docs/DATA.md)

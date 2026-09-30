@@ -1,0 +1,20 @@
+# Same three original q snapshots; only declared clamp probe locations differ.
+version: 2
+seed: 20260924
+backends:
+- paired
+- paired_reuse
+- paired_sparse
+- product_chain
+- product_reuse
+cpu: 2
+operation_seconds: 8
+rss_limit_mib: 512
+warm_samples: 3
+clamp_workload: early_middle_late_singletons_v1
+query_setup: fresh_engine_primed_only_with_unclamped_partition
+budget:
+  max_factor_entries: 67108864
+  max_workspace_bytes: 536870912
+  max_oracle_assignments: 9223372036854775807
+phase: targeted_early_middle_late_evidence_prefix_reuse

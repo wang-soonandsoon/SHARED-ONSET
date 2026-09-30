@@ -1,0 +1,28 @@
+# Small structural pilot; formal execution starts only after core validation.
+version: 1
+phase: shared_rhythm_synthetic_pilot
+grid:
+  R: [2, 3, 4, 6, 8]
+  L: 16
+  D: 16
+  K: 4
+  betas: [0.0, 0.02]
+  visibility: [unknown, partial, known]
+  q_seeds: [20260931, 20260932]
+  probabilities:
+    logit_scale: 0.7
+    hold_bias: 2.0
+    rest_bias: -1.0
+backends: [template_stream, ve_aligned, product_prefix, onset_reset, onset_rejection_drop, onset_rejection_boundary]
+timing_repeats: 3
+warm_samples: 2
+sample_seed: 20260933
+order_seed: 20260934
+cpu: 2
+worker_seconds: 10
+rss_limit_mib: 512
+max_proposals: 10000
+budget:
+  max_factor_entries: 67108864
+  max_workspace_bytes: 536870912
+  max_oracle_assignments: 9223372036854775807

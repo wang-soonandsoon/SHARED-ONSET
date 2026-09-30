@@ -1,0 +1,17 @@
+# Visible-context selection of eight long requests, before model evaluation.
+version: 1
+revision_root: runs/revision
+output: runs/shared_rhythm_extension/long_inputs
+requests:
+  context_cells: 256
+  L: 32
+  K: 8
+  beta: 0.02
+  quotas: {"3": 4, "4": 4}
+  partial_prefix_cells: 8
+  min_visible_onsets: 8
+  max_per_work: 2
+  minimum_distinct_works: 8
+  seed: 20260951
+  pitch_low: 48
+  pitch_high: 84

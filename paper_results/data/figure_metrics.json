@@ -1,0 +1,359 @@
+{
+  "source_snapshot_utc": "2026-09-12T18:17:25.897899+00:00",
+  "stages": {
+    "synthetic": {
+      "rows": 480,
+      "raw_and_delivery_agree": true,
+      "status_counts": {
+        "completed": 292,
+        "unsupported": 156,
+        "internal_budget": 32
+      },
+      "partition_audit": {
+        "target_z_records": 172,
+        "cases_with_target_z": 52,
+        "cases_with_multiple_target_backends": 28,
+        "maximum_log_z_spread": 5.684341886080802e-14,
+        "errors": []
+      }
+    },
+    "real_sampling": {
+      "rows": 168,
+      "raw_and_delivery_agree": true,
+      "status_counts": {
+        "timeout": 24,
+        "rss_limit": 16,
+        "completed": 56,
+        "unsupported": 48,
+        "internal_budget": 24
+      },
+      "partition_audit": {
+        "target_z_records": 28,
+        "cases_with_target_z": 20,
+        "cases_with_multiple_target_backends": 8,
+        "maximum_log_z_spread": 4.973799150320701e-14,
+        "errors": []
+      }
+    },
+    "real_proposal": {
+      "rows": 144,
+      "raw_and_delivery_agree": true,
+      "status_counts": {
+        "completed": 127,
+        "internal_budget": 16,
+        "timeout": 1
+      },
+      "partition_audit": {
+        "target_z_records": 8,
+        "cases_with_target_z": 8,
+        "cases_with_multiple_target_backends": 0,
+        "maximum_log_z_spread": 0.0,
+        "errors": []
+      }
+    },
+    "long_sampling": {
+      "rows": 128,
+      "raw_and_delivery_agree": true,
+      "status_counts": {
+        "completed": 84,
+        "rss_limit": 8,
+        "timeout": 16,
+        "internal_budget": 20
+      },
+      "partition_audit": {
+        "target_z_records": 7,
+        "cases_with_target_z": 6,
+        "cases_with_multiple_target_backends": 1,
+        "maximum_log_z_spread": 1.7053025658242404e-13,
+        "errors": []
+      }
+    }
+  },
+  "real_r3_speedups": {
+    "cold_solver_seconds": {
+      "n": 8,
+      "median": 26.656089043398993,
+      "min": 11.494732795438942,
+      "max": 36.60317895444699,
+      "q25": 25.744031589457094,
+      "q75": 29.82475206964774
+    },
+    "full_warm_mean_seconds": {
+      "n": 8,
+      "median": 6.352530249273654,
+      "min": 2.858675563947983,
+      "max": 8.61633169619408,
+      "q25": 5.3340213275603805,
+      "q75": 7.219943425591839
+    },
+    "full_workload_solver_seconds": {
+      "n": 8,
+      "median": 8.115005953595208,
+      "min": 3.730729670470936,
+      "max": 11.184134261332867,
+      "q25": 6.764622408847193,
+      "q75": 9.2035300793079
+    }
+  },
+  "real_boundary_absolute": {
+    "cold_solver_seconds": {
+      "n": 24,
+      "median": 0.023441300509148277,
+      "min": 0.014179234000039287,
+      "max": 0.04783712299831677,
+      "q25": 0.019949117508076597,
+      "q75": 0.03541395674983505
+    },
+    "full_warm_mean_seconds": {
+      "n": 24,
+      "median": 0.009343453467027436,
+      "min": 0.005267690225493072,
+      "max": 0.05087160396731399,
+      "q25": 0.007394542153046894,
+      "q75": 0.014290231983449626
+    },
+    "full_workload_solver_seconds": {
+      "n": 24,
+      "median": 0.31957490897912066,
+      "min": 0.1839365350024309,
+      "max": 1.6126512299815658,
+      "q25": 0.2519391062487557,
+      "q75": 0.4833998654867173
+    }
+  },
+  "exact_acceptance_r3": {
+    "onset_rejection_drop": {
+      "n": 8,
+      "median": 0.10147982812152564,
+      "min": 0.044501496536337296,
+      "max": 0.3999153224621221,
+      "q25": 0.07980456739410052,
+      "q75": 0.1492033882288336
+    },
+    "onset_rejection_boundary": {
+      "n": 8,
+      "median": 0.6483623268056764,
+      "min": 0.32298767574431025,
+      "max": 0.8679600210575906,
+      "q25": 0.6215522673475505,
+      "q75": 0.7262608459291402
+    },
+    "onset_rejection_visible": {
+      "n": 8,
+      "median": 0.7503404134448559,
+      "min": 0.3326807864367596,
+      "max": 0.8679600210575906,
+      "q25": 0.6575115119860768,
+      "q75": 0.8171944762907888
+    }
+  },
+  "component_gains": {
+    "onset_rejection_visible": {
+      "n": 24,
+      "median": 1.0755409746118458,
+      "min": 0.9534533381278564,
+      "max": 1.6092456210529102,
+      "q25": 0.9948057565848654,
+      "q75": 1.2358818815260766
+    },
+    "onset_rejection_boundary_early": {
+      "n": 24,
+      "median": 1.177766927721556,
+      "min": 0.7970968593066696,
+      "max": 1.831549608752245,
+      "q25": 1.0282203835288348,
+      "q75": 1.3788571216405197
+    },
+    "onset_rejection_visible_early": {
+      "n": 24,
+      "median": 1.1937960142756525,
+      "min": 0.8232534335736492,
+      "max": 2.0979958013742563,
+      "q25": 1.1328579512369612,
+      "q75": 1.446286718769625
+    }
+  },
+  "combined_gains": {
+    "real_proposal": {
+      "cold_solver_seconds": {
+        "n": 24,
+        "median": 1.0127766245303438,
+        "min": 0.5151521640808054,
+        "max": 3.5325088251968264,
+        "q25": 0.9545067428703884,
+        "q75": 1.2426292805066945
+      },
+      "full_workload_solver_seconds": {
+        "n": 24,
+        "median": 1.1937960142756525,
+        "min": 0.8232534335736492,
+        "max": 2.0979958013742563,
+        "q25": 1.1328579512369612,
+        "q75": 1.446286718769625
+      },
+      "time_reduction_from_median_ratio": 0.16233595351148844
+    },
+    "long_sampling": {
+      "cold_solver_seconds": {
+        "n": 16,
+        "median": 1.23618368163204,
+        "min": 0.7416758976800488,
+        "max": 6.561820559353573,
+        "q25": 0.9916510061242563,
+        "q75": 1.3870752642195736
+      },
+      "full_workload_solver_seconds": {
+        "n": 16,
+        "median": 1.2164492255215573,
+        "min": 0.9857318187191512,
+        "max": 3.218674666735778,
+        "q25": 1.074759219206203,
+        "q75": 1.706398299168105
+      },
+      "time_reduction_from_median_ratio": 0.17793527340095427
+    }
+  },
+  "known_boundary_over_standard": {
+    "cold_solver_seconds": {
+      "n": 10,
+      "median": 2.056587882094928,
+      "min": 1.1939100725462803,
+      "max": 3.875919768893449,
+      "q25": 1.5043301893753978,
+      "q75": 2.997040233099652
+    },
+    "full_warm_mean_seconds": {
+      "n": 10,
+      "median": 2.61523895660112,
+      "min": 1.2320651144682102,
+      "max": 16.09748413927268,
+      "q25": 2.176173500159705,
+      "q75": 4.255893310545189
+    }
+  },
+  "long_combined_absolute": {
+    "cold_solver_seconds": {
+      "n": 16,
+      "median": 0.03805094550625654,
+      "min": 0.030618954988312908,
+      "max": 0.0790023509907769,
+      "q25": 0.033913279494299786,
+      "q75": 0.044416867502150126
+    },
+    "full_warm_mean_seconds": {
+      "n": 16,
+      "median": 0.015201653999787184,
+      "min": 0.01119968261346296,
+      "max": 0.042408127385574666,
+      "q25": 0.012626143597087996,
+      "q75": 0.022704453394145542
+    },
+    "full_workload_solver_seconds": {
+      "n": 16,
+      "median": 0.5200229854890495,
+      "min": 0.3781693419878138,
+      "max": 1.351925336974091,
+      "q25": 0.43302920926362276,
+      "q75": 0.7395800919475732
+    }
+  },
+  "frozen_model_costs": {
+    "real_inputs": {
+      "status": "completed",
+      "path": "research/runs/shared_rhythm_extension/real_inputs/cases.json",
+      "requests": 24,
+      "works": 24,
+      "model_calls": 24,
+      "first_provider_seconds": 0.1125403249898227,
+      "later_provider_seconds": {
+        "available": 23,
+        "planned": 23,
+        "mean": 0.001541965172889278,
+        "median": 0.0014702799962833524,
+        "p95": 0.0018523663951782508,
+        "minimum": 0.0014381260116351768,
+        "maximum": 0.0018863539880840108
+      },
+      "first_provider_preprocessing_seconds": 0.02086709400464315,
+      "model_loading_seconds": [
+        0.7863832769944565
+      ],
+      "sessions": [
+        {
+          "session_index": 0,
+          "device": "cuda:0",
+          "feature_load_seconds": 0.06065728099201806,
+          "model_load_seconds": 0.7863832769944565,
+          "status": "completed",
+          "model_calls_started": 24,
+          "model_calls_completed": 24,
+          "wall_seconds": 3.688133306990494
+        }
+      ],
+      "policy": {
+        "selection": "Fixed bar positions and K, visible token activity and flags, uniform-q exact hard support; never hidden melody, model q, output quality or solver timing. Distinct source windows; prefer unused works, cap two requests per work.",
+        "boundaries": "The published aligned source supplies initial pitch and sounding pitch at every visible token, including HOLD immediately after a gap. These are explicit conditioning facts; they may encode a pitch sustained from inside the hidden span. This is anchored completion, not unconditioned boundary reconstruction.",
+        "source_preprocessing": "Existing aligned_bars16 preprocessing retained active whole windows and capped windows per work before this study. That historical full-window activity filter is not a claim of visible-only source-dataset selection. New request eligibility reads only the visible projection and supplied anchors.",
+        "model": "Frozen validation-selected bar16 checkpoint, one genuine full130 call per request at noise=1. External 38-dimensional aligned chord features are retained; no hard harmony rule. No new training or test split.",
+        "q": "Original full130 log probabilities are saved without pitch cropping or renormalization. Observed tokens become delta in inference; q is unchanged for every backend/draw.",
+        "scope": "24 distinct anchored validation completion requests, not 24 independent works unless the recorded work count says so. The checkpoint was trained with two gaps; R=3/4/6/8 and L16 use a different mask layout. No human-listening or quality-superiority claim.",
+        "timing": "Per-request provider seconds include input-tensor construction, forward pass, full-vocabulary normalization and CPU transfer, bracketed by CUDA synchronization. Provider preparation, checkpoint/CUDA initialization, validation/storage and whole freeze wall time are separate. No warmup or unrecorded request calls."
+      }
+    },
+    "long_inputs": {
+      "status": "completed",
+      "path": "research/runs/shared_rhythm_extension/long_inputs/cases.json",
+      "requests": 8,
+      "works": 8,
+      "model_calls": 8,
+      "first_provider_seconds": 0.1137122649961384,
+      "later_provider_seconds": {
+        "available": 7,
+        "planned": 7,
+        "mean": 0.0014964220047529256,
+        "median": 0.0014953270001569763,
+        "p95": 0.001521873202000279,
+        "minimum": 0.00147396199463401,
+        "maximum": 0.0015237560000969097
+      },
+      "first_provider_preprocessing_seconds": 0.021347334011807106,
+      "model_loading_seconds": [
+        0.7700831800029846
+      ],
+      "sessions": [
+        {
+          "session_index": 0,
+          "device": "cuda:0",
+          "feature_load_seconds": 0.07509446499170735,
+          "model_load_seconds": 0.7700831800029846,
+          "status": "completed",
+          "model_calls_started": 8,
+          "model_calls_completed": 8,
+          "wall_seconds": 1.905527611990692
+        }
+      ],
+      "policy": {
+        "selection": "Fixed two-bar spans and K8; visible token activity, visible onset flags and model-independent uniform-q support. Prefer unused works, cap two requests per work, select each source window once. No hidden-melody, q, quality or timing selection. The candidate audit counts screened candidates only.",
+        "boundaries": "The published aligned source supplies initial pitch and sounding pitch at every visible token, including HOLD immediately after a gap. These are explicit conditioning facts; they may encode a pitch sustained from inside the hidden span. This is anchored completion, not unconditioned boundary reconstruction.",
+        "source_preprocessing": "Existing aligned_bars16 preprocessing retained active whole windows and capped windows per work before this study. That historical full-window activity filter is not a claim of visible-only source-dataset selection. New request eligibility reads only the visible projection and supplied anchors.",
+        "model": "Frozen validation-selected bar16 checkpoint, one genuine full130 call per request at noise=1. External 38-dimensional aligned chord features are retained; no hard harmony rule. No new training or test split.",
+        "q": "Original full130 log probabilities are saved without pitch cropping or renormalization. Observed tokens become delta in inference; q is unchanged for every backend/draw.",
+        "scope": "Eight distinct anchored validation requests, R3/R4, L32 and K8 in 256 cells. The partial prefix grows to eight cells, preserving 25% visibility in the first span. Length, count, absolute visible prefix and gap positions change together; this is not a strict single-variable length ablation. The existing checkpoint was trained with two L32 gaps; R3/R4 still changes the training mask layout. No human-listening or quality-superiority claim.",
+        "timing": "Per-request provider seconds include input-tensor construction, forward pass, full-vocabulary normalization and CPU transfer, bracketed by CUDA synchronization. Provider preparation, checkpoint/CUDA initialization, validation/storage and whole freeze wall time are separate. No warmup or unrecorded request calls.",
+        "cross_cohort": "This is a separately seeded eight-request cohort. A source work/window may also occur in the L16 cohort; cohorts are not paired by melody unless an explicit source-identity intersection is reported."
+      }
+    }
+  },
+  "figures": [
+    "Figure3_Controlled_Scaling",
+    "Figure4_Real_Requests",
+    "Figure5_Proposal_Ablations",
+    "Supplement_S1_Known_Rhythm",
+    "Supplement_S2_Long_And_Wide"
+  ],
+  "real_combined_workload_outcomes": {
+    "boundary_over_combined_ratio_gt_1_05": 21,
+    "boundary_over_combined_ratio_lt_inverse_1_05": 1,
+    "boundary_over_combined_ratio_in_inverse_1_05_to_1_05": 2
+  }
+}

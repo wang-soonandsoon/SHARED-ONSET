@@ -1,0 +1,20 @@
+# Same full q snapshots, five implementations, three fresh-process repetitions.
+version: 1
+seed: 20260925
+backends:
+- product_chain
+- product_reuse
+- product_prefix
+- paired_reuse
+- paired_sparse
+cpu: 2
+operation_seconds: 8
+rss_limit_mib: 512
+warm_samples: 3
+clamp_workload: early_middle_late_and_joint_evidence_v1
+query_setup: fresh_engine_primed_only_with_unclamped_partition
+budget:
+  max_factor_entries: 67108864
+  max_workspace_bytes: 536870912
+  max_oracle_assignments: 9223372036854775807
+phase: equal_prefix_cache_decision_study

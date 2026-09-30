@@ -1,0 +1,31 @@
+# Frozen validation-only revision. Original research.yaml and runs/research stay intact.
+version: 2
+protocol: validation_revision
+device: cuda:0
+seed: 20260915
+methods: [pooled_template, one_shot_joint, tri_direct, smc_4]
+steps: 8
+render_audio: true
+bar_data: {max_windows_per_work: 12, seed: 20260912}
+bar_model: {hidden: 128, layers: 2, heads: 4, dropout: 0.1, condition_dim: 38}
+bar_training: {steps: 3000, batch_size: 16, lr: 0.0003, eval_every: 100, save_every: 100}
+scaling: {timeout_seconds: 10}
+stages:
+  - name: short
+    data_directory: data/processed/paper2_tri/research_8beats
+    checkpoint: runs/research/main_chord/seed_20260913/train/best.pt
+    training_seed: 20260913
+    repeats: 8
+    cohort: {gap_cells: 8, per_kind: 6, candidate_windows: 96, max_per_work: 3, min_visible_onsets: 4}
+  - name: bar8
+    bars: 8
+    data_directory: data/processed/paper2_tri/aligned_bars8
+    training_seed: 20260915
+    repeats: 4
+    cohort: {gap_cells: 16, per_kind: 6, candidate_windows: 32, max_per_work: 2, min_visible_onsets: 8}
+  - name: bar16
+    bars: 16
+    data_directory: data/processed/paper2_tri/aligned_bars16
+    training_seed: 20260915
+    repeats: 4
+    cohort: {gap_cells: 32, per_kind: 6, candidate_windows: 32, max_per_work: 2, min_visible_onsets: 16}

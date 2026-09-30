@@ -1,0 +1,35 @@
+# Bounded integration run; explicit CPU, not a paper experiment.
+version: 1
+device: cpu
+seeds: [20260912]
+data:
+  directory: data/processed/paper2_tri/research_8beats
+  seed: 20260912
+  max_files: 909
+  window_beats: 8
+  max_windows_per_file: 100000
+models:
+  verify_chord: {hidden: 32, layers: 1, heads: 4, dropout: 0.1, condition_dim: 38}
+training:
+  steps: 12
+  batch_size: 16
+  lr: 0.0003
+  eval_every: 6
+  save_every: 6
+  max_gap_cells: 8
+evaluation:
+  splits: [validation]
+  suites: [unknown4, unknown8, partial8, known8, harmony8]
+  methods: [raw_reference, local_constraints, single_template, pooled_template, one_shot_joint, template_joint, fa_joint, tri_direct, tri_guided, path_is_4, smc_4, rejection_16, candidate_16]
+  repeats: 2
+  per_work: 1
+  limit: 1
+  steps: 4
+  backend: auto
+  max_factor_entries: 2000000
+  max_workspace_mib: 512
+benchmarks:
+  trials: 8
+listening:
+  limit: 2
+  methods: [one_shot_joint, tri_direct, smc_4]

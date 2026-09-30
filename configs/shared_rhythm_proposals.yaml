@@ -1,0 +1,33 @@
+version: 1
+protocol: shared_rhythm_extension_v1_independent_draw_seeds
+common:
+  cpu: 2
+  rss_limit_mib: 512
+  max_proposals: 10000
+  budget:
+    max_factor_entries: 67108864
+    max_workspace_bytes: 536870912
+    max_oracle_assignments: 9223372036854775807
+stages:
+  real_proposal:
+    manifest: runs/shared_rhythm_extension/real_inputs/cases.json
+    family: real_validation_shared_rhythm
+    expected_cases: 24
+    backends: [product_multi, onset_rejection_drop, onset_rejection_boundary, onset_rejection_visible, onset_rejection_boundary_early, onset_rejection_visible_early]
+    timing_repeats: 1
+    samples_per_worker: 32
+    worker_seconds: 30
+    sample_seed: 20261023
+    order_seed: 20261024
+    sampling_scope: independent_full_draws_one_cold_then_31_reused
+  long:
+    manifest: runs/shared_rhythm_extension/long_scale_inputs/cases.json
+    family: real_validation_shared_rhythm
+    expected_cases: 16
+    backends: [product_multi, ve_aligned, template_stream, onset_rejection_drop, onset_rejection_boundary, onset_rejection_visible, onset_rejection_boundary_early, onset_rejection_visible_early]
+    timing_repeats: 1
+    samples_per_worker: 32
+    worker_seconds: 10
+    sample_seed: 20261033
+    order_seed: 20261034
+    sampling_scope: eight_L32_requests_each_with_original_and_wide_domain_same_q_no_new_model_calls

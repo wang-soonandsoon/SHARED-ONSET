@@ -1,0 +1,25 @@
+# Final identical-input comparison. Preserve preliminary measurements.
+version: 2
+seed: 20260924
+backends:
+- paired
+- template
+- ve
+- ve_aligned
+- ve_minfill
+- product_chain
+- paired_reuse
+- paired_sparse
+- product_reuse
+- template_stream
+cpu: 2
+operation_seconds: 8
+rss_limit_mib: 512
+warm_samples: 3
+clamp_workload: singletons_then_joint_v1
+query_setup: fresh_engine_primed_only_with_unclamped_partition
+budget:
+  max_factor_entries: 67108864
+  max_workspace_bytes: 536870912
+  max_oracle_assignments: 9223372036854775807
+phase: final_interleaved_comparison_after_implementation_and_tests

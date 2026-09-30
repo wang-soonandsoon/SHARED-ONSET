@@ -3,22 +3,25 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "shared-onset-core"
-version = "0.1.0"
-description = "Core onset-reset inference for shared-onset music infilling"
-readme = "README.md"
+name = "shared-onset"
+version = "1.0.0"
+description = "Exact joint sampling for shared-onset music infilling"
 requires-python = ">=3.11"
-dependencies = ["numpy>=1.26", "scipy>=1.11"]
+dependencies = ["numpy>=1.26", "scipy>=1.11", "mido>=1.3", "mir_eval>=0.8", "PyYAML>=6", "threadpoolctl>=3", "psutil>=5.9"]
 
 [project.optional-dependencies]
+neural = ["torch>=2.2"]
+research = ["torch>=2.2", "matplotlib>=3.6", "pandas>=2"]
+plots = ["matplotlib>=3.6", "pandas>=2"]
 dev = ["pytest>=8"]
 
-[project.urls]
-Repository = "https://github.com/wang-soonandsoon/SHARED-ONSET"
+[project.scripts]
+tri = "tri.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
+addopts = "-ra"

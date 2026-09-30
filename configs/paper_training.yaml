@@ -1,0 +1,12 @@
+version: 1
+data: {bars: 16, max_windows_per_work: 12, seed: 20260912}
+model: {length: 256, hidden: 128, layers: 2, heads: 4, dropout: 0.1, condition_dim: 38}
+training:
+  steps: 3000
+  batch_size: 16
+  seed: 20260915
+  lr: 0.0003
+  eval_every: 100
+  save_every: 100
+  min_gap_cells: 32
+  max_gap_cells: 32
